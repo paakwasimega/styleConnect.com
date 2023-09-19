@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>styleConnect</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="Fashion sales website">
+  <meta name="keywords" content="fashion store, online fashion boutique, trendy clothing, designer clothing, high quality fashion, men's wear, women's wear, kids' wear">
+  <meta name="author" content="zerosNones">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE-edge">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="checkout.css">
+
+  <!-- Correct Font Awesome link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+  
+  <nav>
+    <input type="checkbox" id="check">
+    <label for="check">
+      <i class="fas fa-bars" id="btn"></i>
+      <i class="fas fa-times" id="cancel"></i>
+    </label>
+    <label for="brand name" class="brand"><a style="color:white; "href="index.html">styleConnect</a></label>
+    <ul>
+      <li><a href="index.html"><i class="fa-solid fa-house"></i></a></li>
+      <li><a href="store.html">Store</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="login.html"><i class="fa-regular fa-user"></i></a></li>
+    </ul>
+  </nav>
+
+  <div class="search-box">
+    <input type="text" class="search-input" placeholder="Search...">
+    <button class="search-button">Search</button>
+  </div>
+  
+  <form id="orderForm" style="width: 80%; max-width: 400px; margin: 0 auto;">
+    <label for="productName">Product Name:</label>
+    <input type="text" id="productName" style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+
+    <label for="productPrice">Product Price:</label>
+    <input type="number" id="productPrice" step="0.01" style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+
+    <button type="button" onclick="addProduct()" style="padding: 10px 20px; margin-left: 140px; background-color: #2cbc61; color: white; border: none; border-radius: 4px; cursor: pointer; display: flex; justify-content: center; align-items: center; ">Add Product</button>
+  </form>
+
+  <div id="productList" style="margin-top: 20px;"></div>
+
+  <hr>
+
+  <div>
+    <strong>Total Number of Products:</strong> <span id="totalProducts">0</span><br>
+    <strong>Total Cost:</strong> $<span id="totalCost">0.00</span>
+  </div>
+
+  <a href="tel:+2330592110875" style=" flex; justify-content: center; align-items: center; color: #2cbc61; font-weight: bold;"" >CONTACT AGENT</a>
+    
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-columns">
+        <div class="footer-column">
+          <h3>About Us</h3>
+          <p>Welcome to styleConnect, the platform where<a href="about.html" style="color: white;">...More</a></p>
+        </div>
+        <div class="footer-column">
+          <h3>Contact Us</h3>
+          <p>odjaamissdarko@gmail.com</p>
+          <p>Phone: +233503490494</p>
+        </div>
+        <div class="footer-column">
+          <h3>Follow Us</h3>
+          <p>Facebook</p>
+          <p>Twitter</p>
+          <p>Instagram</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <script>
+    let products = [];
+
+    function addProduct() {
+      const productName = document.getElementById('productName').value;
+      const productPrice = parseFloat(document.getElementById('productPrice').value);
+
+      if (productName && !isNaN(productPrice)) {
+        products.push({ name: productName, price: productPrice });
+        updateProductList();
+        updateTotals();
+      }
+
+      document.getElementById('productName').value = '';
+      document.getElementById('productPrice').value = '';
+    }
+
+    function updateProductList() {
+      const productList = document.getElementById('productList');
+      productList.innerHTML = '';
+
+      products.forEach((product, index) => {
+        const productItem = document.createElement('div');
+        productItem.innerHTML = `${product.name}: $${product.price.toFixed(2)}`;
+        productList.appendChild(productItem);
+      });
+    }
+
+    function updateTotals() {
+      const totalProducts = products.length;
+      const totalCost = products.reduce((total, product) => total + product.price, 0);
+
+      document.getElementById('totalProducts').textContent = totalProducts;
+      document.getElementById('totalCost').textContent = totalCost.toFixed(2);
+    }
+  </script>
+</body>
+</html>
+

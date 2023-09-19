@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>styleConnect</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="Fashion sales website">
+  <meta name="keywords" content="fashion store, online fashion boutique, trendy clothing, designer clothing, high quality fashion, men's wear, women's wear, kids' wear">
+  <meta name="author" content="zerosNones">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE-edge">
+  <link rel="stylesheet" href="style.css">
+  <!-- Correct Font Awesome link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+  
+  <nav>
+    <input type="checkbox" id="check">
+    <label for="check">
+      <i class="fas fa-bars" id="btn"></i>
+      <i class="fas fa-times" id="cancel"></i>
+    </label>
+    <label for="brand name" class="brand"><a style="color:white; "href="index.html">styleConnect</a></label>
+    <ul>
+      <li><a href="index.html"><i class="fa-solid fa-house"></i></a></li>
+      <li><a href="store.html">Store</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="#">CART</a></li>
+      <li><a href="login.html"><i class="fa-regular fa-user"></i></a></li>
+    </ul>
+  </nav>
+
+  <div class="search-box">
+    <input type="text" class="search-input" placeholder="Search...">
+    <button class="search-button">Search</button>
+  </div>
+
+  <h3 style="text-align: center;">ITEMS IN STOCK</h3>
+
+  <div class="item-container">
+    <div class="item">
+        <img src="images\kids1.png" alt="Item 1">
+        <h3>Item 1</h3>
+        <p>$8.00</p>
+        <button class="add-to-cart-btn">Add to Cart</button>
+    </div>
+    <div class="item">
+      <img src="images\kids2.png" alt="Item 1">
+      <h3>Item 2</h3>
+      <p>$10.00</p>
+      <button class="add-to-cart-btn">Add to Cart</button>
+  </div>
+  <div class="item">
+    <img src="images\kids3.png" alt="Item 1">
+    <h3>Item 3</h3>
+    <p>$15.00</p>
+    <button class="add-to-cart-btn">Add to Cart</button>
+</div>
+<div class="item">
+  <img src="images\kids4.png" alt="Item 1">
+  <h3>Item 4</h3>
+  <p>$12.00</p>
+  <button class="add-to-cart-btn">Add to Cart</button>
+</div>
+<div class="item">
+  <img src="images\kids5.png" alt="Item 1">
+  <h3>Item 5</h3>
+  <p>$13.00</p>
+  <button class="add-to-cart-btn">Add to Cart</button>
+</div>
+<div class="item">
+  <img src="images\kids6.png" alt="Item 1">
+  <h3>Item 6</h3>
+  <p>$16.00</p>
+  <button class="add-to-cart-btn">Add to Cart</button>
+</div>
+
+    <!-- Repeat similar structure for other items -->
+</div>
+<div class="cart">
+    <h2>Cart</h2>
+    <ul id="cart-items">
+        <!-- Cart items will be dynamically added here -->
+    </ul>
+</div>
+<script src="script.js"></script>
+
+<h3 style="text-align: center; margin-top: 20px;">CLICK TO GO TO CHECKOUT FORM</h3>
+<a href="checkout.html" style="display: flex; justify-content: center; align-items: center;"><button>CHECKOUT</button></a>
+
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-columns">
+      <div class="footer-column">
+        <h3>About Us</h3>
+        <p>Welcome to style connect, the platform where
+          <a href="about.html" style="color: #fff;">...More</a>
+        </p>
+      </div>
+      <div class="footer-column">
+        <h3>Contact Us</h3>
+        <p>odjaamissdarko@gmail.com</p>
+        <p>Phone: +233503490494</p>
+      </div>
+      <div class="footer-column">
+        <h3>Follow Us</h3>
+        <p>Facebook</p>
+        <p>Twitter</p>
+        <p>Instagram</p>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
+
+<!--https://youtu.be/ZI41tLLxNak(link to how to create a product catalogue)-->
+<!--https://www.youtube.com/watch?v=9hnJsNIBq1g&pp=ygUqaG93IHRvIGNyZWF0ZSBhIHNlYXJjaCBiYXIgaW4gaHRtbCBhbmQgY3Nz(link to create a search bar)-->
